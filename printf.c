@@ -1,4 +1,6 @@
-int printf(const char *str, ...)
+#include "ft_printf.h"
+
+int ft_printf(const char *str, ...)
 {
     size_t  count;
     size_t  i;
@@ -10,7 +12,7 @@ int printf(const char *str, ...)
     while (str[i])
     {
         if(str[i] == '%')
-            count += ft_add(&argp, str[++i]);
+            count += ft_if(&argp, str[++i]);
         else
             count += ft_putchar(str[i]);
     i++;
